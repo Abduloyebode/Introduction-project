@@ -11,7 +11,7 @@ The domain/subdomain to use
 Your task is to:
 
 SSH into the VM
-Install Coolify on the VM.
+Install Coolify on the VM. https://coolify.io/self-hosted
 Connect Coolify to the GitHub repository.
 Deploy the app "Demo nextJS app" (available here: https://github.com/CrazedBySerenity/demo-nextjs-app) and make it available over HTTPS.
 Clone the "Demo nextJS app" locally and download the required dependancies (You might need docker desktop if you're not on linux for example)
