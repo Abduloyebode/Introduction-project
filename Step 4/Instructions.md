@@ -6,7 +6,7 @@ Move document processing into a background job.
 
 Your task is to:
 
-1. Add a suitable job queue or background-job service.
+1. Add a suitable job queue or background-job service. Please use Inngest cloud for this. You can create a new, free account yourself to use
 2. Change uploads so the request returns without waiting for AI processing.
 3. Track each job using statuses such as:
 

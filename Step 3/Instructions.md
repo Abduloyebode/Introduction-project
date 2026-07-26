@@ -7,7 +7,7 @@ Add an AI-powered document-processing feature.
 Your task is to:
 
 1. Allow authenticated users to upload a text-based PDF.
-2. Send the extracted text to an LLM using structured output.
+2. Send the extracted text to an LLM using structured output. (OpenAI, see new 1password link for API key)
 3. Extract:
 
    * Document title
