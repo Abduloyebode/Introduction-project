@@ -26,6 +26,7 @@ Existing users each get a personal organisation and Admin membership. Their exis
 ## Security decisions and limits
 
 - Access is enforced with `requireOrganisationMembership()` plus `organisationId` on every workflow/document query and mutation. Direct IDs from another org return “not found”.
+- Workflow/document mutations are scoped by organisation only, not by the individual owner — any Member can edit or delete any workflow/document in their org, not just ones they created. This is deliberate, matching the "Member — create and manage workflows and documents inside the organisation" model above (shared team workspace, not per-person silos), and was confirmed rather than left as an unreviewed side effect of the organisationId-scoping change.
 - Admin-only mutations return errors if a Member calls them (not only UI gating).
 - The last Admin cannot be removed or demoted. This check locks every membership row in the org (stable order, so concurrent admin actions can't deadlock each other) and reads the current role/admin count from inside that lock — not from data read before the transaction opened. An earlier version of this check read the target's role once up front and used that stale value inside the lock, which let a role change racing a removal slip past the guard; a regression test now forces that exact interleaving.
 - Invite accept requires the signed-in email to match the invite.
